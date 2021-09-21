@@ -15,21 +15,22 @@ parser code
 }
 :};
 
-terminal Linea, Comillas, T_dato, Cadena, If, Else,Switch,Case,Do, While, For, Int, Doble,
+terminal Linea, Comillas, T_dato, Cadena, If, Else, Switch, Case, Break, Default, Return, Do, While, For, Int, Doble,
     Igual, Suma, Resta, Multiplicacion, Division, Op_logico, Op_relacional,
     Op_atribucion, Op_incremento, Op_booleano, Parent_a, Parent_c,
-    Llave_a, Llave_c, Corchete_a, Corchete_c, Main, P_coma, Punto, Coma, Printf,
+    Llave_a, Llave_c, Corchete_a, Corchete_c, Main, DosPuntos, P_coma, Punto, Coma, Printf,
     Scanf, Cin, Cout, Const, Short, Unsigned, Struct, Typedef, Palabra_Reservada, Identificador,
     Numero, ERROR;
 non terminal INICIO, SENTENCIA, DECLARACION, DECLARACION_FOR, IF, IF_ELSE,
-    WHILE, DO_WHILE, FOR, SENTENCIA_BOOLEANA, SENTENCIA_FOR;
+    WHILE, DO_WHILE, FOR, SENTENCIA_BOOLEANA, SENTENCIA_FOR, SWITCH_CASE, PRUEBA;
 
 start with INICIO;
 
 INICIO ::= 
-    Int Main Parent_a Parent_c Llave_a SENTENCIA Llave_c |
+    Int Main Parent_a Parent_c Llave_a SENTENCIA Return Numero P_coma Llave_c |
     Main Parent_a Parent_c Llave_a SENTENCIA Llave_c |
-    Int Main Parent_a Parent_c Llave_a Llave_c 
+    Int Main Parent_a Parent_c Llave_a Return Numero P_coma Llave_c  
+
 ;
 SENTENCIA ::= 
     SENTENCIA DECLARACION |
@@ -43,7 +44,8 @@ SENTENCIA ::=
     SENTENCIA DO_WHILE |
     DO_WHILE |
     SENTENCIA FOR |
-    FOR
+    FOR |
+    SWITCH_CASE 
 ;
 DECLARACION ::= 
     Doble Identificador P_coma |
@@ -74,6 +76,10 @@ SENTENCIA_BOOLEANA ::=
 ;
 IF_ELSE ::= If Parent_a SENTENCIA_BOOLEANA Parent_c Llave_a SENTENCIA Llave_c Else Llave_a SENTENCIA Llave_c
 ;
+SWITCH_CASE::= Switch Parent_a Identificador Parent_c Llave_a  Case Numero DosPuntos SENTENCIA Break P_coma Default DosPuntos SENTENCIA Break P_coma Llave_c |
+             Switch Parent_a Identificador Parent_c Llave_a  Case Cadena DosPuntos SENTENCIA Palabra_Reservada P_coma Palabra_Reservada DosPuntos SENTENCIA Break P_coma Llave_c 
+; 
+
 WHILE ::= While Parent_a SENTENCIA_BOOLEANA Parent_c Llave_a SENTENCIA Llave_c
 ;
 DO_WHILE ::= Do Llave_a SENTENCIA Llave_c While Parent_a SENTENCIA_BOOLEANA Parent_c P_coma

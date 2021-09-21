@@ -89,6 +89,8 @@ espacio=[ \t \r \n]+
 /* P_coma */
 ( ";" ) {return new Symbol(sym.P_coma, yychar, yyline, yytext());}
 
+/* DosPuntos */
+( ":" ) {return new Symbol(sym.DosPuntos, yychar, yyline, yytext());}
 //------------------------------------------------------------------------------
 //-------------------------Palabras reservadas----------------------------------
 //Ciclos
@@ -113,6 +115,15 @@ espacio=[ \t \r \n]+
 
 /* Palabra reservada case */
 ( case ) {return new Symbol(sym.Case, yychar, yyline, yytext());}
+
+/* Palabra reservada Break */
+( break ) {return new Symbol(sym.Break, yychar, yyline, yytext());}
+
+/* Palabra reservada Default */
+( default ) {return new Symbol(sym.Default, yychar, yyline, yytext());}
+
+/* Palabra reservada Return */
+( return ) {return new Symbol(sym.Return, yychar, yyline, yytext());}
 
 //------------------------------------------------------------------------------
 //Tipo de datos

@@ -12,6 +12,9 @@ public enum Tokens {
     Else,
     Switch,
     Case,
+    Break,
+    Default,
+    Return,
     //---------------------------------
     Do,
     While,
@@ -37,6 +40,7 @@ public enum Tokens {
     Punto,
     Coma,
     P_Coma,
+    DosPuntos,
     //---------------------------------------------
     Palabra_Reservada,
     Main,

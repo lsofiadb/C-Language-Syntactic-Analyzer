@@ -78,6 +78,9 @@ espacio=[ \t \r]+
 /* P_Coma */
 ( ";" ) {lexemas=yytext(); return P_Coma;}
 
+/* DosPuntos */
+( ":" ) {lexemas=yytext(); return DosPuntos;}
+
 //------------------------------------------------------------------------------
 //-------------------------Palabras reservadas----------------------------------
 /* Palabra reservada While */
@@ -103,6 +106,14 @@ espacio=[ \t \r]+
 /* Case */
 ( "case" ) {lexemas=yytext(); return Case;}
 
+/* Break */
+( "break" ) {lexemas=yytext(); return Break;}
+
+/* Default */
+( "default" ) {lexemas=yytext(); return Default;}
+
+/* Return */
+( "return" ) {lexemas=yytext(); return Return;}
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 //Tipo de datos
