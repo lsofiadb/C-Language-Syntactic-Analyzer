@@ -380,24 +380,27 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
                 case Numero:
                     resultado += "  <Numero>\t\t" + lexicos.lexemas + "\n";
                     break;
-                case ERROR:
-                    resultado += "  <Simbolo no definido>\n";
-                    break;
+                
                 case Break:
-                    resultado += "  <Reservada break>\t\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Reservada break>\t" + lexicos.lexemas + "\n";
                     break;
                 
                 case Default:
-                    resultado += "  <Reservada refault>\t\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Reservada default>\t" + lexicos.lexemas + "\n";
                     break;
                 
                 case Return:
-                    resultado += "  <Reservada return>\t\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Reservada return>\t" + lexicos.lexemas + "\n";
                     break;    
                 
                 case DosPuntos:
-                    resultado += "  <Dos Puntos >\t\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Dos Puntos >\t" + lexicos.lexemas + "\n";
                     break;   
+                
+                case ERROR:
+                    resultado += "  <Simbolo no definido>\n";
+                    break;
+                
                 
                 default:
                     resultado += "  < " + lexicos.lexemas + " >\n";

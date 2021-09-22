@@ -1,1 +1,11 @@
-int b;
+int main (){
+switch(a){
+case 1:
+double a;
+break;
+default:
+double c;
+break;
+}
+return 0;
+}
