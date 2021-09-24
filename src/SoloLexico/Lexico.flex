@@ -32,7 +32,7 @@ espacio=[ \t \r]+
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
 /* Operadores Atribucion */
-( "+=" | "-="  | "*=" | "/=" | "%=" ) {lexemas = yytext(); return Op_atribucion;}
+( "+=" | "-="  | "*=" | "/=" | "%=" | "%" ) {lexemas = yytext(); return Op_atribucion;}
 
 /* Operadores Incremento y decremento */
 ( "++" | "--" ) {lexemas = yytext(); return Op_incremento;}
@@ -124,10 +124,25 @@ espacio=[ \t \r]+
 (double) {lexemas=yytext(); return Doble;}
 
 /* Tipo de dato String */
-( String ) {lexemas=yytext(); return Cadena;}
+( string ) {lexemas=yytext(); return Cadena;}
+
+/* Tipo de dato Float */
+( float ) {lexemas=yytext(); return Float;}
+
+/* Tipo de dato Long */
+( long ) {lexemas=yytext(); return Long;}
+
+/* Tipo de dato Char */
+( char ) {lexemas=yytext(); return Char;}
+
+/* Short */
+( short ) {lexemas=yytext(); return Short;}
+
+/* Const*/
+( const ) {lexemas=yytext(); return Const;}
 
 /* Tipos de datos */
-( byte | int | char | long | float | double ) {lexemas=yytext(); return T_dato;}
+( byte | int | char | long | float | double | string | short | const) {lexemas=yytext(); return T_dato;}
 
 //------------------------------------------------------------------------------
 
@@ -145,6 +160,24 @@ espacio=[ \t \r]+
 
 
 //------------------------------------------------------------------------------
+/* Continue*/
+( continue ) {lexemas=yytext(); return Continue;} 
+
+/* Goto*/
+( goto ) {lexemas=yytext(); return Goto;} 
+
+/* Enum*/
+( enum ) {lexemas=yytext(); return Enum;} 
+
+/* Extern*/
+( extern ) {lexemas=yytext(); return Extern;} 
+
+/* Register*/
+( register ) {lexemas=yytext(); return Register;} 
+
+/* Union*/
+( union ) {lexemas=yytext(); return Union;} 
+
 //Palabras reservadas
 ( break | continue | default | enum | extern | goto | register | return | union) {lexemas=yytext(); return Palabra_Reservada;}
 
@@ -163,11 +196,6 @@ espacio=[ \t \r]+
 ( cout ) {lexemas=yytext(); return Cout;}
 
 //------------------------------------------------------------------------------
-/* Const*/
-( const ) {lexemas=yytext(); return Const;}
-
-/* Short */
-( short ) {lexemas=yytext(); return Short;}
 
 /* Unsigned */
 ( unsigned ) {lexemas=yytext(); return Unsigned;}

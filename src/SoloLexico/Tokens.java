@@ -3,6 +3,9 @@ package SoloLexico;
 public enum Tokens {
     Int,
     Doble,
+    Float,
+    Long,
+    Char,
     Linea,
     Comillas,
     T_dato,
@@ -19,6 +22,8 @@ public enum Tokens {
     Do,
     While,
     For,
+    Continue,
+    Goto,
     //-------------------------------------------------
     Igual,
     Suma,
@@ -49,6 +54,10 @@ public enum Tokens {
     Scanf,
     Cin,
     Cout,
+    Enum, 
+    Extern,
+    Register,
+    Union,
     //----------------------------------------------
     Const,
     Short,

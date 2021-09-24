@@ -42,7 +42,7 @@ espacio=[ \t \r \n]+
 //------------------------------------------------------------------------------
 /* Operadores Atribucion */
 /* Operadores Atribucion */
-( "+=" | "-="  | "*=" | "/=" | "%=" | "=" ) {return new Symbol(sym.Op_atribucion, yychar, yyline, yytext());}
+( "+=" | "-="  | "*=" | "/=" | "%=" | "=" | "%") {return new Symbol(sym.Op_atribucion, yychar, yyline, yytext());}
 
 /* Operadores Incremento y decremento */
 ( "++" | "--" ) {return new Symbol(sym.Op_incremento, yychar, yyline, yytext());}
@@ -93,6 +93,23 @@ espacio=[ \t \r \n]+
 ( ":" ) {return new Symbol(sym.DosPuntos, yychar, yyline, yytext());}
 //------------------------------------------------------------------------------
 //-------------------------Palabras reservadas----------------------------------
+ /* Palabra reservada Continue */
+( continue ) {return new Symbol(sym.Continue, yychar, yyline, yytext());}
+ /* Palabra reservada Goto */
+( goto ) {return new Symbol(sym.Goto, yychar, yyline, yytext());}
+
+ /* Palabra reservada Enum */
+( enum ) {return new Symbol(sym.Enum, yychar, yyline, yytext());}
+
+ /* Palabra reservada Extern */
+( extern ) {return new Symbol(sym.Extern, yychar, yyline, yytext());}
+
+ /* Palabra reservada Register */
+( register ) {return new Symbol(sym.Register, yychar, yyline, yytext());}
+
+ /* Palabra reservada Union */
+( union ) {return new Symbol(sym.Union, yychar, yyline, yytext());}
+
 //Ciclos
 /* Palabra reservada Do */
 ( do ) {return new Symbol(sym.Do, yychar, yyline, yytext());}
@@ -134,17 +151,30 @@ espacio=[ \t \r \n]+
 ( double ) {return new Symbol(sym.Doble, yychar, yyline, yytext());}
 
 /* Tipo de dato String */
-( String ) {return new Symbol(sym.Cadena, yychar, yyline, yytext());}
+( string ) {return new Symbol(sym.Cadena, yychar, yyline, yytext());}
 
-/* Tipos de datos */
-( byte | int | char | long | float | double ) {return new Symbol(sym.T_dato, yychar, yyline, yytext());}
+/* Tipo de dato Float */
+( float ) {return new Symbol(sym.Float, yychar, yyline, yytext());}
 
-//------------------------------------------------------------------------------
-/* Const*/
-( const ) {return new Symbol(sym.Const, yychar, yyline, yytext());}
+/* Tipo de dato Long */
+( long ) {return new Symbol(sym.Long, yychar, yyline, yytext());}
+
+/* Tipo de dato Char */
+( char ) {return new Symbol(sym.Char, yychar, yyline, yytext());} 
 
 /* Short */
 ( short ) {return new Symbol(sym.Short, yychar, yyline, yytext());}
+
+/* Const*/
+( const ) {return new Symbol(sym.Const, yychar, yyline, yytext());}
+
+/* Tipos de datos */
+( byte | int | char | long | float | double | string | short| const) {return new Symbol(sym.T_dato, yychar, yyline, yytext());}
+
+//------------------------------------------------------------------------------
+
+
+
 
 /* Unsigned */
 ( unsigned ) {return new Symbol(sym.Unsigned, yychar, yyline, yytext());}
