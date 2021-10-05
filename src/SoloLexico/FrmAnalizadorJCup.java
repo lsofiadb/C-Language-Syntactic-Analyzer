@@ -30,6 +30,7 @@ import javax.swing.JOptionPane;
  * @author mdelgado
  */
 public class FrmAnalizadorJCup extends javax.swing.JFrame {
+
     private Menu menu;
 
     /**
@@ -67,6 +68,11 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jtxtAreaSintactico = new javax.swing.JTextArea();
         jButtonSintactico = new javax.swing.JButton();
+        jButtonIntermedio = new javax.swing.JButton();
+        Boton_Assembler = new javax.swing.JButton();
+        Boton_Objeto = new javax.swing.JButton();
+        Boton_Ejecutable = new javax.swing.JButton();
+        Boton_Ejecutar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -154,45 +160,109 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
             }
         });
 
+        jButtonIntermedio.setBackground(new java.awt.Color(162, 217, 206));
+        jButtonIntermedio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonIntermedio.setText("Intermedio");
+        jButtonIntermedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIntermedioActionPerformed(evt);
+            }
+        });
+
+        Boton_Assembler.setBackground(new java.awt.Color(162, 217, 206));
+        Boton_Assembler.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Boton_Assembler.setText("Assembler");
+        Boton_Assembler.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton_AssemblerActionPerformed(evt);
+            }
+        });
+
+        Boton_Objeto.setBackground(new java.awt.Color(162, 217, 206));
+        Boton_Objeto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Boton_Objeto.setText("Objeto");
+        Boton_Objeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton_ObjetoActionPerformed(evt);
+            }
+        });
+
+        Boton_Ejecutable.setBackground(new java.awt.Color(162, 217, 206));
+        Boton_Ejecutable.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Boton_Ejecutable.setText("Ejecutable");
+        Boton_Ejecutable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton_EjecutableActionPerformed(evt);
+            }
+        });
+
+        Boton_Ejecutar.setBackground(new java.awt.Color(162, 217, 206));
+        Boton_Ejecutar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Boton_Ejecutar.setText("Ejecutar");
+        Boton_Ejecutar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton_EjecutarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane3))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnArchivo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Borrar1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jScrollPane2)
+                                    .addComponent(BotonAnalisis, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnArchivo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(Borrar1)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(13, 13, 13)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jScrollPane2)
-                                            .addComponent(BotonAnalisis, javax.swing.GroupLayout.DEFAULT_SIZE, 365, Short.MAX_VALUE)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE))))
+                                .addContainerGap()
+                                .addComponent(jScrollPane3))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(83, 83, 83)
-                                .addComponent(jButtonSintactico, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(53, 53, 53)
+                                        .addComponent(jButtonSintactico, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonIntermedio, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Boton_Assembler, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(62, 62, 62)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Boton_Objeto, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Boton_Ejecutable, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(25, 25, 25))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Boton_Ejecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(114, 114, 114)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -219,15 +289,24 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 40, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonIntermedio, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Boton_Objeto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Boton_Assembler, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Boton_Ejecutable, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Boton_Ejecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonSintactico, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(12, 12, 12))
         );
 
         pack();
@@ -336,7 +415,7 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
                     break;
                 case Palabra_Reservada:
                     resultado += "  <Reservada>\t" + lexicos.lexemas + "\n";
-                    break;    
+                    break;
                 case P_Coma:
                     resultado += "  <Punto y coma>\t" + lexicos.lexemas + "\n";
                     break;
@@ -345,63 +424,62 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
                     break;
                 case Coma:
                     resultado += "  <Coma>\t\t" + lexicos.lexemas + "\n";
-                    break;     
-                case Printf :
+                    break;
+                case Printf:
                     resultado += "  <Reservada printf>\t" + lexicos.lexemas + "\n";
                     break;
-                case Scanf :
+                case Scanf:
                     resultado += "  <Reservada scanf>\t" + lexicos.lexemas + "\n";
                     break;
-                case Cin :
+                case Cin:
                     resultado += "  <Reservada cin>\t" + lexicos.lexemas + "\n";
                     break;
-                case Cout :
+                case Cout:
                     resultado += "  <Reservada cout>\t" + lexicos.lexemas + "\n";
-                    break;  
-                
-                case Const :
+                    break;
+
+                case Const:
                     resultado += "  <Reservada const>\t" + lexicos.lexemas + "\n";
                     break;
-                case Short :
+                case Short:
                     resultado += "  <Tipo de dato >\t" + lexicos.lexemas + "\n";
                     break;
-                case Unsigned :
+                case Unsigned:
                     resultado += "  <Reservada unsigned>\t" + lexicos.lexemas + "\n";
                     break;
-                case Struct :
+                case Struct:
                     resultado += "  <Reservada struct>\t" + lexicos.lexemas + "\n";
                     break;
-                case Typedef :
+                case Typedef:
                     resultado += "  <Reservada typedef>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Identificador:
                     resultado += "  <Identificador>\t\t" + lexicos.lexemas + "\n";
                     break;
                 case Numero:
                     resultado += "  <Numero>\t\t" + lexicos.lexemas + "\n";
                     break;
-                
+
                 case Break:
                     resultado += "  <Reservada break>\t" + lexicos.lexemas + "\n";
                     break;
-                
+
                 case Default:
                     resultado += "  <Reservada default>\t" + lexicos.lexemas + "\n";
                     break;
-                
+
                 case Return:
                     resultado += "  <Reservada return>\t" + lexicos.lexemas + "\n";
-                    break;    
-                
+                    break;
+
                 case DosPuntos:
                     resultado += "  <Dos Puntos >\t" + lexicos.lexemas + "\n";
-                    break;   
-                
+                    break;
+
                 case ERROR:
                     resultado += "  <Simbolo no definido>\n";
                     break;
-                
-                
+
                 default:
                     resultado += "  < " + lexicos.lexemas + " >\n";
                     break;
@@ -439,7 +517,7 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
     }//GEN-LAST:event_Borrar1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if(arc!=null){
+        if (arc != null) {
             BufferedWriter bw = null;
             try {
                 bw = new BufferedWriter(new FileWriter(arc));
@@ -454,7 +532,7 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(FrmAnalizadorJFlex.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "No ha adjuntado ningun archivo (Cargar archivo)");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -466,7 +544,7 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         this.menu.finalizar();
-        
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -487,6 +565,60 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
             jtxtAreaSintactico.setForeground(Color.red);
         }
     }//GEN-LAST:event_jButtonSintacticoActionPerformed
+
+    private void Boton_EjecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_EjecutarActionPerformed
+        try {
+            String[] comando = {"correr.bat"};
+            Runtime.getRuntime().exec(comando);
+            System.out.println("Ejecucion del programa en el sistema operativo");
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }    }//GEN-LAST:event_Boton_EjecutarActionPerformed
+
+    private void jButtonIntermedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIntermedioActionPerformed
+        try {
+            String[] intermedio = {"intermedio.bat"};
+            Runtime.getRuntime().exec(intermedio);
+            System.out.println("Ejecucion del convertidor de código fuente a código intermedio ");
+            Boton_Assembler.setEnabled(true);
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+    }//GEN-LAST:event_jButtonIntermedioActionPerformed
+
+    private void Boton_AssemblerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_AssemblerActionPerformed
+        try {
+            String[] gassembler = {"ensamblador.bat"};
+            Runtime.getRuntime().exec(gassembler);
+            System.out.println("Ejecucion del convertidor de código intermedio a assembler");
+            Boton_Objeto.setEnabled(true);
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_Boton_AssemblerActionPerformed
+
+    private void Boton_ObjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_ObjetoActionPerformed
+        try {
+            String[] gobjeto = {"objeto.bat"};
+            Runtime.getRuntime().exec(gobjeto);
+            System.out.println("Ejecucion del convertidor assembler a objeto");
+            Boton_Ejecutable.setEnabled(true);
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_Boton_ObjetoActionPerformed
+
+    private void Boton_EjecutableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_EjecutableActionPerformed
+        try {
+            String[] gejecutable = {"ejecutable.bat"};
+            Runtime.getRuntime().exec(gejecutable);
+            System.out.println("Ejecucion del generador del programa ejecutable");
+            Boton_Ejecutar.setEnabled(true);
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_Boton_EjecutableActionPerformed
 
     /**
      * @param args the command line arguments
@@ -523,15 +655,16 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
             }
         });
     }
-    public void disegnBtns(){
+
+    public void disegnBtns() {
         imgRegresar = new ImageIcon("src/imagenes/izquierda.png");
         imgAux = new ImageIcon(imgRegresar.getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING));
-        
+
         jButton2.setBorder(null);
         //Color rojo 236, 112, 99
         jButton2.setBackground(new Color(82, 190, 128));
         jButton2.setIcon(imgAux);
-        
+
         //----------------------------------------
         imgCancelar = new ImageIcon("src/imagenes/cerrar.png");
         imgAux = new ImageIcon(imgCancelar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
@@ -542,19 +675,24 @@ public class FrmAnalizadorJCup extends javax.swing.JFrame {
 
     public void setMenu(Menu menu) {
         this.menu = menu;
-    }    
+    }
 
     private File arc;
     private ImageIcon imgCancelar, imgRegresar, imgAux;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Borrar1;
     private javax.swing.JButton BotonAnalisis;
+    private javax.swing.JButton Boton_Assembler;
+    private javax.swing.JButton Boton_Ejecutable;
+    private javax.swing.JButton Boton_Ejecutar;
+    private javax.swing.JButton Boton_Objeto;
     private javax.swing.JTextArea Resultado;
     private javax.swing.JButton btnArchivo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButtonIntermedio;
     private javax.swing.JButton jButtonSintactico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
