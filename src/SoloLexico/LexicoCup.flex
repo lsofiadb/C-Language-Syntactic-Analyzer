@@ -58,7 +58,7 @@ espacio=[ \t \r \n]+
 //------------------------------------------------------------------------------
 /*Operadores Relacionales */
 /*Operadores Relacionales */
-( ">" | "<" | "==" | "!=" | ">=" | "<=" | "<<" | ">>" ) {return new Symbol(sym.Op_relacional, yychar, yyline, yytext());}
+( ">" | "<" | "==" | "!=" | ">=" | "<=" | "<<" | ">>" |"#" ) {return new Symbol(sym.Op_relacional, yychar, yyline, yytext());}
 
 //------------------------------------------------------------------------------
 //Caracteres y simbolos---------------------------------------------------------
@@ -199,7 +199,7 @@ espacio=[ \t \r \n]+
 
 //------------------------------------------------------------------------------
 //Palabras reservadas
-( break | continue | default | enum | extern | goto | register | return | union) {return new Symbol(sym.Palabra_Reservada, yychar, yyline, yytext());}
+( break | continue | default | enum | extern | goto | register | return | union | include | using |namespace |std ) {return new Symbol(sym.Palabra_Reservada, yychar, yyline, yytext());}
 
 /* Marcador de inicio de algoritmo */
 ( "main" ) {return new Symbol(sym.Main, yychar, yyline, yytext());}

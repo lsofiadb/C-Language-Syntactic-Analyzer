@@ -1,0 +1,30 @@
+#include <stdlib.h>
+#include <stdio.h>
+using namespace std;
+int main(){
+int a=1;
+int b=5;
+if(a==1){
+printf("Ciencias");
+}
+else{
+printf("Calculo");
+int z=6;
+printf("Tres");
+}
+int w=3;
+switch(w){
+case 1:
+int vector [5];
+break;
+case 3:
+printf("Tres");
+break;
+default:
+printf("Error");
+break;
+}
+
+system("pause");
+return 0;
+}

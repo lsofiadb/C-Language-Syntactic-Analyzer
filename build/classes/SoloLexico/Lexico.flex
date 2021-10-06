@@ -47,7 +47,7 @@ espacio=[ \t \r]+
 
 //------------------------------------------------------------------------------
 /*Operadores Relacionales */
-( ">" | "<" | "==" | "!=" | ">=" | "<=" | "<<" | ">>" ) {lexemas = yytext(); return Op_relacional;}
+( ">" | "<" | "==" | "!=" | ">=" | "<=" | "<<" | ">>" | "#" ) {lexemas = yytext(); return Op_relacional;}
 
 //------------------------------------------------------------------------------
 //Caracteres y simbolos---------------------------------------------------------
@@ -179,7 +179,7 @@ espacio=[ \t \r]+
 ( union ) {lexemas=yytext(); return Union;} 
 
 //Palabras reservadas
-( break | continue | default | enum | extern | goto | register | return | union) {lexemas=yytext(); return Palabra_Reservada;}
+( break | continue | default | enum | extern | goto | register | return | union |  include | using |namespace |std |system|pause) {lexemas=yytext(); return Palabra_Reservada;}
 
 /* Marcador de inicio de algoritmo */
 ( "main" ) {lexemas=yytext(); return Main;}

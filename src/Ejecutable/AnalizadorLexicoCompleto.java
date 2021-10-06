@@ -14,7 +14,9 @@ import java.nio.file.Paths;
 
 /**
  *
- * @author 57301
+ * @author Laura Sofia Dueñas Bulla
+ * @author Cristian Andrés Torres Chaparro
+ * @author Pablo Esteban Espinosa Granados 
  */
 public class AnalizadorLexicoCompleto {
 

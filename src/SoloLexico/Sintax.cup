@@ -23,15 +23,22 @@ terminal Linea, Comillas, T_dato, Cadena, If, Else, Switch, Case, Break, Default
     Numero, ERROR;
 non terminal INICIO, SENTENCIA, DECLARACION, DECLARACION_FOR, IF, IF_ELSE,
     WHILE, DO_WHILE, FOR, SENTENCIA_BOOLEANA, SENTENCIA_FOR, CASE, SWITCH_CASE, OPERACIONES_BASICAS, 
-    OPERACIONES, COUT, CIN, ARREGLO, ARREGLO_DEFINIDO, ESTRUCTURAS;
+    OPERACIONES, COUT, CIN, ARREGLO, ARREGLO_DEFINIDO, ESTRUCTURAS, LIBRERIAS;
 
 start with INICIO;
 
 INICIO ::= 
+    Op_relacional Palabra_Reservada Op_relacional Identificador Op_relacional |
+    Op_relacional Palabra_Reservada Op_relacional Identificador Punto Identificador Op_relacional |
+    Palabra_Reservada Palabra_Reservada Palabra_Reservada P_coma INICIO|
+    Op_relacional Palabra_Reservada Op_relacional Identificador Op_relacional INICIO |
+    Op_relacional Palabra_Reservada Op_relacional Identificador Punto Identificador Op_relacional INICIO |
+    Int Main Parent_a Parent_c Llave_a SENTENCIA Identificador Parent_a Comillas Identificador Comillas Parent_c P_coma Return Numero P_coma Llave_c |
     Int Main Parent_a Parent_c Llave_a SENTENCIA Return Numero P_coma Llave_c |
     Main Parent_a Parent_c Llave_a SENTENCIA Llave_c |
     Int Main Parent_a Parent_c Llave_a Return Numero P_coma Llave_c  
-
+    //Int Main Parent_a Parent_c Llave_a SENTENCIA Palabra_Reservada Parent_a Comillas Palabra_Reservada Comillas Parent_c P_coma Return Numero P_coma Llave_c |
+  //  Int Main Parent_a Parent_c Llave_a  Identificador Parent_a Comillas Identificador Comillas Parent_c P_coma Return Numero P_coma Llave_c 
 ;
 SENTENCIA ::= 
     SENTENCIA DECLARACION |
@@ -166,9 +173,10 @@ OPERACIONES_BASICAS ::=
 //Salida por consola
 COUT ::= 
     Printf Parent_a Identificador Parent_c P_coma |
+    Cout Op_relacional Identificador P_coma |
     Cout Op_relacional Comillas Identificador Comillas P_coma |
+    Printf Parent_a Comillas Identificador Comillas Coma Identificador Parent_c P_coma |
     Printf Parent_a Comillas Identificador Comillas Parent_c P_coma 
-    
 ;
 //Entrada por consola
 CIN ::= 
